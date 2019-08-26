@@ -4,8 +4,9 @@ Base URL: https://sp-conjugator-be.herokuapp.com
 
 ## Endpoints
 
-**POST (Register)**
-**/api/auth/register**
+**Register a new user.**
+
+**POST to /api/auth/register**
 
 _Send:_
 
