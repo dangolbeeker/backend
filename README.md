@@ -54,9 +54,15 @@ _Save the token to local storage and send in header of all requests that need th
 
 ## Get User Profile
 
-**GET to /api/user/:id**
+**GET to /api/users/:id**
 
 _Send user id as part of the url._
+
+_Send token in the header as:_
+
+```
+Autorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o
+```
 
 _Get Back:_
 
@@ -70,7 +76,7 @@ _Get Back:_
 
 ## Get list of all users - (for testing only, will be removed in product)
 
-**GET to /api/users/**
+**GET to /api/users**
 
 _Send token in request header._
 

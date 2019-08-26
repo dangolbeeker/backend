@@ -13,9 +13,9 @@ function addUser(user) {
     .then(() => {
       return db("users")
         .where("email", user.email)
+        .select("id", "name", "email")
         .first();
     });
-  // return findUser(id);
 }
 
 function findUser(id) {
