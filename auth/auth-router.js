@@ -7,7 +7,7 @@ const secrets = require("../config/secrets.js");
 const Users = require("../users/users-model.js");
 
 router.post("/register", (req, res) => {
-  if (req.body.username && req.body.password) {
+  if (req.body.name && req.body.email && req.body.password) {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 12); // hash the password
     user.password = hash; // reset password as hashed password
@@ -22,25 +22,27 @@ router.post("/register", (req, res) => {
         });
       });
   } else {
-    res.status(400).json({ message: "Please enter a username and password." });
+    res
+      .status(400)
+      .json({ message: "Please enter name, email, and password." });
   }
 });
 
 router.post("/login", (req, res) => {
-  if (req.body.username && req.body.password) {
-    let { username, password } = req.body;
-    Users.findBy({ username })
+  if (req.body.email && req.body.password) {
+    let { email, password } = req.body;
+    Users.findBy({ email })
       .first()
       .then(user => {
         if (user && bcrypt.compareSync(password, user.password)) {
           const token = createToken(user);
-          res.status(200).json({ message: `Welcome, ${user.username}`, token });
+          res.status(200).json({ message: `Welcome, ${user.name}.`, token });
         } else {
           res.status(401).json({ message: "Those credentials aren't valid." });
         }
       });
   } else {
-    res.status(400).json({ message: "Please enter a username and password." });
+    res.status(400).json({ message: "Please enter email and password." });
   }
 });
 
