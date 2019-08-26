@@ -10,11 +10,9 @@ _Send:_
 
 ```
 {
-
 	"name": "Dave",
 	"email": "email@email.com",
 	"password": "password"
-
 }
 ```
 
@@ -26,7 +24,6 @@ _Get Back:_
 	"name": "Dave",
 	"email": "email@email.com"
 }
-
 ```
 
 _Save the id as needed for later use._
@@ -51,7 +48,6 @@ _Get Back:_
   "message": "Welcome, Dave.",
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o"
 }
-
 ```
 
 _Save the token to local storage and send in header of all requests that need the user to be authenticated._
@@ -70,7 +66,6 @@ _Get Back:_
   "name": "Dave",
   "email": "dave@email.com"
 }
-
 ```
 
 _Save the token to local storage and send in header of all requests that need the user to be authenticated._
