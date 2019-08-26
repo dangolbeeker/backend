@@ -58,10 +58,12 @@ _Save the token to local storage and send in header of all requests that need th
 
 _Send user id as part of the url._
 
-_Send token in the header as:_
+_Send token in request header:_
 
 ```
-Autorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o
+{
+	"Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o"
+}
 ```
 
 _Get Back:_
