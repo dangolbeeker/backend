@@ -54,7 +54,7 @@ _Save the token to local storage and send in header of all requests that need th
 
 ## Get User Profile
 
-**Get to /api/user/:id**
+**GET to /api/user/:id**
 
 _Send user id as part of the url._
 
