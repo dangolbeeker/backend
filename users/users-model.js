@@ -8,16 +8,15 @@ module.exports = {
 };
 
 function addUser(user) {
-  return db("users")
-    .insert(user)
-    .then(id => {
-      const newId = id[0];
-      console.log(newId);
-      return db("users")
-        .where({ id: newId })
-        .select("id", "name", "email")
-        .first();
-    });
+  return db("users").insert(user);
+  // .then(id => {
+  //   const newId = id[0];
+  //   console.log(newId);
+  //   return db("users")
+  //     .where({ id: newId })
+  //     .select("id", "name", "email")
+  //     .first();
+  // });
   // return findUser(id);
 }
 
