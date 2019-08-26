@@ -13,7 +13,6 @@ async function addUser(user) {
 }
 
 function findUser(id) {
-  console.log(id);
   return db("users")
     .where({ id })
     .select("id", "name", "email")

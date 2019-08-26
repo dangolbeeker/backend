@@ -68,4 +68,31 @@ _Get Back:_
 }
 ```
 
-_Save the token to local storage and send in header of all requests that need the user to be authenticated._
+## Get list of all users - (for testing only, will be removed in product)
+
+**GET to /api/users/**
+
+_Send token in header._
+
+```
+{
+	"Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o"
+}
+```
+
+_Get Back:_
+
+```
+[
+  {
+    "id": 1,
+    "name": "Admin",
+    "email": "admin@email.com"
+  },
+  {
+    "id": 2,
+    "name": "Dave",
+    "email": "dave@email.com"
+  }
+]
+```
