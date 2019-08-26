@@ -25,7 +25,7 @@ router.post("/register", (req, res) => {
 
     Users.addUser(user)
       .then(saved => {
-        res.status(201).json(saved);
+        res.status(201).json({ message: "New user created." });
       })
       .catch(err => {
         res.status(500).json({
