@@ -13,13 +13,13 @@ async function addUser(user) {
   return findUser(id);
 }
 
-// function findUser(id) {
-//   return db("users")
-//     .where({ id })
-//     .select("id", "name", "email")
-//     .orderBy("id")
-//     .first();
-// }
+function findUser(id) {
+  return db("users")
+    .where({ id })
+    .select("id", "name", "email")
+    .orderBy("id")
+    .first();
+}
 
 function findBy(filter) {
   return db("users").where(filter);
