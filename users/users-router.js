@@ -3,6 +3,11 @@ const router = require("express").Router();
 const Users = require("./users-model.js");
 const restricted = require("../auth/auth-middleware.js");
 
+router.get("/", (req, res) => {
+  Users.findAll().then(users => {
+    res.send(users);
+  });
+});
 router.get("/:id", restricted, (req, res) => {
   console.log(req.params.id);
   Users.findById(req.params.id)
