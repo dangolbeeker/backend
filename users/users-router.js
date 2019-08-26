@@ -20,4 +20,6 @@ router.get("/:id", restricted, (req, res) => {
     });
 });
 
+router.put("/:id", restricted, (req, res) => {});
+
 module.exports = router;
