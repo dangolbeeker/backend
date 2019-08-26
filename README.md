@@ -72,7 +72,7 @@ _Get Back:_
 
 **GET to /api/users/**
 
-_Send token in header._
+_Send token in request header._
 
 ```
 {
