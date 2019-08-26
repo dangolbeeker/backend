@@ -6,6 +6,17 @@ const secrets = require("../config/secrets.js");
 
 const Users = require("../users/users-model.js");
 
+function createToken(user) {
+  const payload = {
+    subject: user.id,
+    username: user.username
+  };
+  const options = {
+    expiresIn: "24h"
+  };
+  return jwt.sign(payload, secrets.jwtSecret, options);
+}
+
 router.post("/register", (req, res) => {
   if (req.body.name && req.body.email && req.body.password) {
     let user = req.body;
@@ -45,16 +56,5 @@ router.post("/login", (req, res) => {
     res.status(400).json({ message: "Please enter email and password." });
   }
 });
-
-function createToken(user) {
-  const payload = {
-    subject: user.id,
-    username: user.username
-  };
-  const options = {
-    expiresIn: "24h"
-  };
-  return jwt.sign(payload, secrets.jwtSecret, options);
-}
 
 module.exports = router;
