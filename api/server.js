@@ -13,7 +13,7 @@ server.use(cors());
 server.use(express.json());
 
 server.get("/", (req, res) => {
-  res.status(200).json({ testObject: process.env.TEST });
+  res.send("<h1>Welcome to the backend!</h1>");
 });
 
 server.use("/api/auth", authRouter);
