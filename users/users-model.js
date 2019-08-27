@@ -14,7 +14,7 @@ function addUser(user) {
     .then(() => {
       return db("users")
         .where("email", user.email)
-        .select("id", "name", "email", "per_day", "streak_days")
+        .select("id", "name", "email")
         .first();
     });
 }

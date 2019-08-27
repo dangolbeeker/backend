@@ -5,7 +5,6 @@ Base URL: https://sp-conjugator-be.herokuapp.com
 ## Register New User
 
 **POST to /api/auth/register**
-
 _Send:_
 
 ```
@@ -26,12 +25,9 @@ _Get Back:_
 }
 ```
 
-_Save the id as needed for later use._
-
 ## Login
 
 **POST to /api/auth/login**
-
 _Send:_
 
 ```
@@ -45,42 +41,19 @@ _Get Back:_
 
 ```
 {
-  "message": "Welcome, Dave.",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o"
+	"message": "Welcome, Dave.",
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o"
 }
 ```
 
 _Save the token to local storage and send in header of all requests that need the user to be authenticated._
+_For logout behavior, delete the token from local storage._
 
 ## Get User Profile
 
 **GET to /api/users/:id**
-
 _Send user id as part of the url._
-
-_Send token in request header:_
-
-```
-{
-	"Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o"
-}
-```
-
-_Get Back:_
-
-```
-{
-  "id": 8,
-  "name": "Dave",
-  "email": "dave@email.com"
-}
-```
-
-## Get list of all users - (for testing only, will be removed in product)
-
-**GET to /api/users**
-
-_Send token in request header._
+_Send token in request header using "Athorization" property._
 
 ```
 {
@@ -91,16 +64,45 @@ _Send token in request header._
 _Get Back:_
 
 ```
-[
-  {
-    "id": 1,
-    "name": "Admin",
-    "email": "admin@email.com"
-  },
-  {
-    "id": 2,
-    "name": "Dave",
-    "email": "dave@email.com"
-  }
-]
+{
+	"id": 2,
+	"name": "testing",
+	"email": "testing@email.com",
+	"per_day": 3,
+	"streak_days": 0
+}
+```
+
+## Update User Profile
+
+**PUT to /api/users/:id**
+_Send user id as part of the url._
+_Send token in request header using "Athorization" property._
+
+```
+{
+	"Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o"
+}
+```
+
+_Send updates in request body:_
+_These properties may be updated: **name, email, per_day, streak_days**._
+
+```
+{
+	"per_day": 5,
+	"streak_days": 1,
+}
+```
+
+_Get Back the updated user:_
+
+```
+{
+	"id": 2,
+	"name": "testing",
+	"email": "testing@email.com",
+	"per_day": 5,
+	"streak_days": 1
+}
 ```
