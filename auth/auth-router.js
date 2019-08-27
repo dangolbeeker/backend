@@ -18,6 +18,7 @@ function createToken(user) {
 }
 
 router.post("/register", (req, res) => {
+  console.log(req.body.name);
   if (req.body.name && req.body.email && req.body.password) {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 12); // hash the password
