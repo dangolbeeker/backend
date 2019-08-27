@@ -5,6 +5,7 @@ Base URL: https://sp-conjugator-be.herokuapp.com
 ## Register New User
 
 **POST to /api/auth/register**
+
 _Send:_
 
 ```
@@ -28,6 +29,7 @@ _Get Back:_
 ## Login
 
 **POST to /api/auth/login**
+
 _Send:_
 
 ```
@@ -52,6 +54,7 @@ _For logout behavior, delete the token from local storage._
 ## Get User Profile
 
 **GET to /api/users/:id**
+
 _Send user id as part of the url._
 _Send token in request header using "Athorization" property._
 
@@ -76,6 +79,7 @@ _Get Back:_
 ## Update User Profile
 
 **PUT to /api/users/:id**
+
 _Send user id as part of the url._
 _Send token in request header using "Athorization" property._
 
