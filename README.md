@@ -110,3 +110,24 @@ _Get Back the updated user:_
 	"streak_days": 1
 }
 ```
+
+## Delete User
+
+**DELETE to /api/users/:id**
+
+_Send user id as part of the url._
+_Send token in request header using "Athorization" property._
+
+```
+{
+	"Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o"
+}
+```
+
+_Get Back the following:_
+
+```
+{
+	"message": "Removed!"
+}
+```
