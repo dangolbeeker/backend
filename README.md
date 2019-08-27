@@ -136,14 +136,6 @@ _Get Back the following:_
 
 **GET to /api/verbs**
 
-_Send token in request header using "Athorization" property._
-
-```
-{
-	"Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo1LCJpYXQiOjE1NjY3Nzk1OTcsImV4cCI6MTU2Njg2NTk5N30.yFjcXl4OS3ielV0ROHZ2FhjS5s38JKqf2R2mwb5wA2o"
-}
-```
-
 _Get back the list of verbs:_
 
 ```
