@@ -4,7 +4,8 @@ module.exports = {
   addUser,
   findUser,
   findBy,
-  findAll
+  findAll,
+  update
 };
 
 function addUser(user) {
@@ -13,7 +14,7 @@ function addUser(user) {
     .then(() => {
       return db("users")
         .where("email", user.email)
-        .select("id", "name", "email")
+        .select("id", "name", "email", "per_day", "streak_days")
         .first();
     });
 }
@@ -21,7 +22,7 @@ function addUser(user) {
 function findUser(id) {
   return db("users")
     .where({ id })
-    .select("id", "name", "email")
+    .select("id", "name", "email", "per_day", "streak_days")
     .first();
 }
 
@@ -30,5 +31,13 @@ function findBy(filter) {
 }
 
 function findAll() {
-  return db("users").select("id", "name", "email");
+  return db("users").select("id", "name", "email", "per_day", "streak_days");
+}
+
+async function update(changes, id) {
+  await db("users")
+    .where({ id })
+    .update(changes)
+    .select("id", "name", "email", "per_day", "streak_days");
+  return findUser(id);
 }
