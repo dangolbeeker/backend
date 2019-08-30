@@ -8,4 +8,3 @@ server.listen(PORT, () => {
 });
 
 
-module.exports = router;
