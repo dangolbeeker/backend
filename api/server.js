@@ -6,7 +6,7 @@ const authenticate = require("../auth/auth-middleware.js");
 const authRouter = require("../auth/auth-router.js");
 const usersRouter = require("../users/users-router.js");
 const verbsRouter = require("../verbs/verbs-router.js");
-const questions = require('./questions');
+const questions = require('../questions.js');
 
 const server = express();
 
@@ -21,6 +21,6 @@ server.get("/", (req, res) => {
 server.use("/api/auth", authRouter);
 server.use("/api/users", authenticate, usersRouter);
 server.use("/api/verbs", verbsRouter);
-server.use("/api/questions", questions);
+server.use("/api/questions", questions, questionsRouter);
 
 module.exports = server;
